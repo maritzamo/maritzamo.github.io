@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+<link href="CSS/Style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+   <header><h1>Cuestionario</h1>
+</header>
+<nav>
+        <ul>
+            <li><a href="files_pages.html">Inicio</a></li>
+            <li><a href="Fotos.html">Galeria</a></li>
+            <li><a href="Galeria.html">Practicas</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+ <main>
+        <section>
+            <form>
+                <h2>1. ¿Cuál es tu fruta favorita?</h2>
+                <label>
+                    <input type="radio" name="color" value="azul"> Mango
+                </label>
+                <label>
+                    <input type="radio" name="color" value="rojo"> Uva
+                </label>
+                <label>
+                    <input type="radio" name="color" value="verde"> Manzana
+                </label>
+                <label>
+                    <input type="radio" name="color" value="otro"> Otro:
+                    <input type="text" name="otro_color">
+                </label>
+            </form>
+            
+            <!-- Las siguientes preguntas van aquí -->
+            
+            <form>
+                <h2>2. ¿Qué series prefieres?</h2>
+                <input type="checkbox" id="terror" name="music" value="terror">
+                <label for="terror">Terror</label><br>
+                <input type="checkbox" id="acción" name="music" value="accion">
+                <label for="accion">Acción</label><br>
+                <input type="checkbox" id="romance" name="music" value="romance">
+                <label for="romance">Romance</label><br>
+                <input type="checkbox" id="otro" name="music" value="Otro">
+                <label for="otro">Otro:</label>
+                <input type="text" id="otro-text" name="music-otro"><br>
+            </form>            
+            
+            <!-- Pregunta 3 -->
+            
+            <form id="questionnaireForm">
+                <h2>3. ¿Cuál es tu género estación favorita favorito?</h2>
+                <input type="button" value="Primavera" onclick="selectGenre('Primavera')">
+                <input type="button" value="Verano" onclick="selectGenre('Verano')">
+                <input type="button" value="Otoño" onclick="selectGenre('otoño')">
+                <input type="button" value="Invierno" onclick="selectGenre('invierno')">
+
+            </form>
+            
+            <!-- Pregunta 4 -->
+            
+            <form action="procesar_respuestas.php" method="post">
+                <h2>4. ¿Qué artísta te gusta más?</h2>
+                <input type="radio" name="artista" value="BTS"> BTS
+                <input type="radio" name="artista" value="Stray Kids"> Stray Kids
+                <input type="radio" name="artista" value="Twice"> Twice
+                <input type="radio" name="artista" value="otro"> Otro: <input type="text" name="otro_deporte">
+                
+                <!-- Pregunta 5 -->
+                
+                <h2>5. ¿Qué tipo de comida prefieres?</h2>
+                <input type="checkbox" name="comida[]" value="Dulce"> Dulce 
+                <input type="checkbox" name="comida[]" value="salada"> salada
+                <input type="checkbox" name="comida[]" value="agridulce"> Agridulce
+                <input type="checkbox" name="comida[]" value="otro"> Otro: <input type="text" name="otra_comida">
+                
+                <!-- Pregunta 6 -->
+                
+                <h2>6. ¿Qué prendas prefieres de ropa?</h2>
+                <select name="animal">
+                    <option value="pantalón">Pantalón</option>
+                    <option value="short">Short</option>
+                    <option value="Falda">Falda</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <input type="text" name="otro_animal">
+                
+                <!-- Pregunta 7 -->
+                
+                <h2>7. ¿Cuál es tu musica favorita?</h2>
+                <input type="text" name="pasatiempo">
+    
+       <!-- Pregunta 8 -->
+                
+                <h2>8. ¿Cuál es tu país favorito?</h2>
+                <select name="estacion">
+                    <option value="primavera">Reino Unido</option>
+                    <option value="verano">Canada</option>
+                    <option value="otono">Corea del Sur </option>
+                    <option value="invierno">Egipto</option>
+                </select>
+                
+                <!-- Pregunta 9 -->
+                
+                <h2>9. ¿Qué sabor de helado prefieres?</h2>
+              <input type="helado" name="preferencia" value="fresa">
+              <input type="helado" name="preferencia" value="Vainilla"> 
+              <input type="helado" name="preferencia" value="Chocolate"> 
+              <input type="helado" name="preferencia" value="limón">   
+                <!-- Pregunta 10 -->
+                
+                <h2>10. ¿Qué carrera te gusta o llama más la atención?</h2>
+                <select name="superpoder">
+                    <option value="diseño gráfico">Diseño Gráfico</option>
+                    <option value="Medicina">Medicina</option>
+                    <option value="Derecho">Derecho</option>
+                    <option value="otro">Otro</option>
+                </select>
+              <input type="text" name="otro_superpoder">
+                
+                <input type="submit" value="Enviar respuestas">
+            </form>
+   </section>
+</main>
+    
+<script>
+        function selectGenre(genre) {
+            console.log("Seleccionaste el género: " + genre);
+        }
+
+        function selectOtherGenre() {
+            var otherGenreInput = document.getElementById("otherGenreInput");
+            otherGenreInput.style.display = "inline";
+        }
+    </script>
+</body>
+</html>
